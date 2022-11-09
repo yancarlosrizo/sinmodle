@@ -22,8 +22,8 @@ from pydownloader.downloader import Downloader
 import shorturl
 import xdlink
 
-tl_admin_users = ['bladimirlorenzo','Frankenstein200','user3'] #Poner aqui los user con acceso permanente
-godlist = ['bladimirlorenzo','Frankenstein200','admin3'] #Poner aqui los admin 
+tl_admin_users = ['quejestoniuyol','user3'] #Poner aqui los user con acceso permanente
+godlist = ['quejestoniuyol','admin3'] #Poner aqui los admin 
 
 async def get_root(username):
     if os.path.isdir(config.ROOT_PATH+username)==False:
@@ -169,7 +169,7 @@ async def onmessage(bot:TelegramClient,ev: NewMessage.Event,loop,ret=False):
 
     #if username not in config.ACCES_USERS:
     if username not in tl_admin_users:
-        await bot.send_message(ev.chat.id,'🛑No Tiene Acceso, contactar a @bladimirlorenzo🛑')
+        await bot.send_message(ev.chat.id,'🛑No Tiene Acceso, contactar a @quejestoniuyol🛑')
         return
 
     if not os.path.isdir(config.ROOT_PATH + username):
@@ -212,7 +212,7 @@ async def onmessage(bot:TelegramClient,ev: NewMessage.Event,loop,ret=False):
 
     if '/start' in text:
         reply = '👋UploaderRepotematico👋\nEs un bot para el manejo de archivos en telegam (descargas/subidas)\n\n'
-        reply += '<a href="https://t.me/bladimirlorenzo>Soporte</a>'
+        reply += '<a href="https://t.me/quejestoniuyol>Soporte</a>'
         message = await bot.send_message(ev.chat.id,reply,parse_mode='html')
         pass
     if '/add' in text and username in godlist:
